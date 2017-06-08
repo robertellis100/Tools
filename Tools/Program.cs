@@ -13,50 +13,50 @@ namespace Tools
 			ToolBox toolbox1 = new ToolBox();
 			toolbox1.ToolBoxList = new List<object>();
 
-			Tool slotted_screwdriver = new Tool();
-			slotted_screwdriver.Name = "Slotted Screwdriver";
-			slotted_screwdriver.Type = "Screwdriver";
-			toolbox1.AddTool(slotted_screwdriver,toolbox1);
+			Tool slottedScrewdriver = new Tool();
+			slottedScrewdriver.Name = "Slotted Screwdriver";
+			slottedScrewdriver.Type = "Screwdriver";
+			toolbox1.AddTool(slottedScrewdriver, toolbox1);
 
-			Tool phillips_screwdriver = new Tool();
-			phillips_screwdriver.Name = "Phillips Screwdriver";
-			phillips_screwdriver.Type = "Screwdriver";
-			toolbox1.AddTool(phillips_screwdriver, toolbox1);
+			Tool phillipsScrewdriver = new Tool();
+			phillipsScrewdriver.Name = "Phillips Screwdriver";
+			phillipsScrewdriver.Type = "Screwdriver";
+			toolbox1.AddTool(phillipsScrewdriver, toolbox1);
 
-			Tool inch_nut_driver = new Tool();
-			inch_nut_driver.Name = "Inch Nut Driver";
-			inch_nut_driver.Type = "Screwdriver";
-			toolbox1.AddTool(inch_nut_driver, toolbox1);
+			Tool inchNutDriver = new Tool();
+			inchNutDriver.Name = "Inch Nut Driver";
+			inchNutDriver.Type = "Screwdriver";
+			toolbox1.AddTool(inchNutDriver, toolbox1);
 
 			Tool pozidriv = new Tool();
 			pozidriv.Name = "Pozidriv";
 			pozidriv.Type = "Power Bit";
 			toolbox1.AddTool(pozidriv, toolbox1);
 
-			Tool security_torx = new Tool();
-			security_torx.Name = "Security Torx";
-			security_torx.Type = "Power Bit";
-			toolbox1.AddTool(security_torx, toolbox1);
+			Tool securityTorx = new Tool();
+			securityTorx.Name = "Security Torx";
+			securityTorx.Type = "Power Bit";
+			toolbox1.AddTool(securityTorx, toolbox1);
 
-			Tool hex_inch = new Tool();
-			hex_inch.Name = "Hex Inch";
-			hex_inch.Type = "Power Bit";
-			toolbox1.AddTool(hex_inch, toolbox1);
+			Tool hexInch = new Tool();
+			hexInch.Name = "Hex Inch";
+			hexInch.Type = "Power Bit";
+			toolbox1.AddTool(hexInch, toolbox1);
 
-			Tool open_end_wrench = new Tool();
-			open_end_wrench.Name = "Open End Wrench";
-			open_end_wrench.Type = "Wrench";
-			toolbox1.AddTool(open_end_wrench, toolbox1);
+			Tool openEndWrench = new Tool();
+			openEndWrench.Name = "Open End Wrench";
+			openEndWrench.Type = "Wrench";
+			toolbox1.AddTool(openEndWrench, toolbox1);
 
-			Tool combination_wrench = new Tool();
-			combination_wrench.Name = "Combination Wrench";
-			combination_wrench.Type = "Wrench";
-			toolbox1.AddTool(combination_wrench, toolbox1);
+			Tool combinationWrench = new Tool();
+			combinationWrench.Name = "Combination Wrench";
+			combinationWrench.Type = "Wrench";
+			toolbox1.AddTool(combinationWrench, toolbox1);
 
-			Tool box_end_wrench = new Tool();
-			box_end_wrench.Name = "Box End Wrench";
-			box_end_wrench.Type = "Wrench";
-			toolbox1.AddTool(box_end_wrench, toolbox1);
+			Tool boxEndWrench = new Tool();
+			boxEndWrench.Name = "Box End Wrench";
+			boxEndWrench.Type = "Wrench";
+			toolbox1.AddTool(boxEndWrench, toolbox1);
 
 			toolbox1.List();
 			Console.ReadLine();
@@ -95,13 +95,14 @@ namespace Tools
 		{
 			Console.WriteLine(this.Name);
 		}
+
 	}
 
 	class ToolBox
 	{
 		public List<object> ToolBoxList { get; set; }
 
-		public void AddTool(Tool tool, ToolBox toolbox)
+		public void AddTool(Tool tool, ToolBox toolBox)
 		{
 			//if (toolbox == null)
 			//{
@@ -111,7 +112,7 @@ namespace Tools
 			//{
 
 				//List<object> list = new ToolBox List<object>;
-				toolbox.ToolBoxList.Add(tool);
+				toolBox.ToolBoxList.Add(tool);
 			//}
 			//why is the object coming back null?
         }
@@ -121,6 +122,11 @@ namespace Tools
 			{
 				tool.List();
 			}
+		}
+
+		public void RemoveFromToolBox(Tool tool, ToolBox toolBox)
+		{
+			toolBox.ToolBoxList.Remove(tool);
 		}
 	}
 }
